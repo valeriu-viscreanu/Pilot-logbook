@@ -1,0 +1,8 @@
+C:\Users\Valeriu\source\repos\TestApiDL\bin\Debug\netcoreapp3.0\TestApiDL.deps.json
+C:\Users\Valeriu\source\repos\TestApiDL\bin\Debug\netcoreapp3.0\TestApiDL.dll
+C:\Users\Valeriu\source\repos\TestApiDL\bin\Debug\netcoreapp3.0\TestApiDL.pdb
+C:\Users\Valeriu\source\repos\TestApiDL\obj\Debug\netcoreapp3.0\TestApiDL.csprojAssemblyReference.cache
+C:\Users\Valeriu\source\repos\TestApiDL\obj\Debug\netcoreapp3.0\TestApiDL.AssemblyInfoInputs.cache
+C:\Users\Valeriu\source\repos\TestApiDL\obj\Debug\netcoreapp3.0\TestApiDL.AssemblyInfo.cs
+C:\Users\Valeriu\source\repos\TestApiDL\obj\Debug\netcoreapp3.0\TestApiDL.dll
+C:\Users\Valeriu\source\repos\TestApiDL\obj\Debug\netcoreapp3.0\TestApiDL.pdb

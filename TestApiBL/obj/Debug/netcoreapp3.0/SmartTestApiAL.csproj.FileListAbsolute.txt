@@ -1,0 +1,11 @@
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\bin\Debug\netcoreapp3.0\SmartTestApiAL.deps.json
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\bin\Debug\netcoreapp3.0\SmartTestApiAL.dll
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\bin\Debug\netcoreapp3.0\SmartTestApiAL.pdb
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\bin\Debug\netcoreapp3.0\SmartTestApiDL.dll
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\bin\Debug\netcoreapp3.0\SmartTestApiDL.pdb
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\obj\Debug\netcoreapp3.0\SmartTestApiAL.csprojAssemblyReference.cache
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\obj\Debug\netcoreapp3.0\SmartTestApiAL.AssemblyInfoInputs.cache
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\obj\Debug\netcoreapp3.0\SmartTestApiAL.AssemblyInfo.cs
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\obj\Debug\netcoreapp3.0\SmartTestApiAL.csproj.CopyComplete
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\obj\Debug\netcoreapp3.0\SmartTestApiAL.dll
+C:\Users\Valeriu\Documents\Smart Project\TestApiBL\obj\Debug\netcoreapp3.0\SmartTestApiAL.pdb
