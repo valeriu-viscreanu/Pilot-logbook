@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Smart.TestApi.DataLayer;
+using Logbook.DataLayer;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Smart.TestApi.Applicationlayer
+namespace Logbook.Applicationlayer
 {
     public class UserService: IUserService
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SmartTestApiDL.Migrations
+namespace Logbook.DataLayer.Migrations
 {
     public partial class First : Migration
     {

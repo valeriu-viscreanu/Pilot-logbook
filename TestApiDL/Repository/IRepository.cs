@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Smart.TestApi.DataLayer
+namespace Logbook.DataLayer
 {
     public interface IRepository<T> where T : class
     {

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Smart.TestApi.DataLayer;
+using Logbook.DataLayer;
 
-namespace SmartTestApiDL.Migrations
+namespace Logbook.DataLayer.Migrations
 {
-    [DbContext(typeof(UserContext))]
+    [DbContext(typeof(LogbookContext))]
     [Migration("20191125170330_Added PIN to model")]
     partial class AddedPINtomodel
     {
@@ -20,7 +20,7 @@ namespace SmartTestApiDL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Smart.TestApi.DataLayer.User", b =>
+            modelBuilder.Entity("Logbook.DataLayer.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

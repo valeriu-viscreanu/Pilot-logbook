@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestApiDL\SmartTestApiDL.csproj" />
+    <ProjectReference Include="..\TestApiDL\LogbookApiDL.csproj" />
   </ItemGroup>
 
 </Project>

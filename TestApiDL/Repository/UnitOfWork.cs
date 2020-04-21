@@ -1,22 +1,29 @@
-﻿namespace Smart.TestApi.DataLayer
+﻿using Logbook.DataLayer;
+
+namespace Logbook.DataLayer
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IRepository<User> userAccountRepository;
-        private readonly UserContext userContext;
+        private readonly IRepository<Flights> flighRepository;
+        private readonly IRepository<AircraftType> aircraftTypeRepository;
+        private readonly IRepository<Aircraft> aircraftRepository;
+
+
+        private readonly LogbookContext logbookContext;
 
         public UnitOfWork()
         {
-                  userContext = new UserContext();
+                  logbookContext = new LogbookContext();
         }
         public void Commit()
         {
-            userContext.SaveChanges();
+            logbookContext.SaveChanges();
         }
 
         public void Dispose()
         {
-            userContext.Dispose();
+            logbookContext.Dispose();
         }
 
 
@@ -24,7 +31,34 @@
         {
             get
             {
-               return userAccountRepository ??  new GenericRepository<User>(userContext);
+               return userAccountRepository ??  new GenericRepository<User>(logbookContext);
+            }
+        }
+
+
+        public IRepository<Flights> Flights
+        {
+            get
+            {
+                return flighRepository ?? new GenericRepository<Flights>(logbookContext);
+            }
+        }
+
+
+        public IRepository<Aircraft> Aircrafts
+        {
+            get
+            {
+                return aircraftRepository ?? new GenericRepository<Aircraft>(logbookContext);
+            }
+        }
+
+
+        public IRepository<AircraftType> AircraftTypes
+        {
+            get
+            {
+                return aircraftTypeRepository ?? new GenericRepository<AircraftType>(logbookContext);
             }
         }
     }

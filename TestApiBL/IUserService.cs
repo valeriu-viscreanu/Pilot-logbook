@@ -1,7 +1,7 @@
-﻿using Smart.TestApi.DataLayer;
+﻿using Logbook.DataLayer;
 using System.Collections.Generic;
 
-namespace Smart.TestApi.Applicationlayer
+namespace Logbook.Applicationlayer
 {
     public interface IUserService
     {

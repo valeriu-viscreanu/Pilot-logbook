@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Smart.TestApi.DataLayer
+namespace Logbook.DataLayer
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {
