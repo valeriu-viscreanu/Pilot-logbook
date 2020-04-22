@@ -4,14 +4,16 @@ using Logbook.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Logbook.DataLayer.Migrations
 {
     [DbContext(typeof(LogbookContext))]
-    partial class UserContextModelSnapshot : ModelSnapshot
+    [Migration("20200422202938_Updated Aircraft type according to ICAO aircraft database")]
+    partial class UpdatedAircrafttypeaccordingtoICAOaircraftdatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
