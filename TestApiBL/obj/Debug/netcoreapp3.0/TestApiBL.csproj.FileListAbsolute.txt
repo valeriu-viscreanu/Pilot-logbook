@@ -1,8 +1,0 @@
-C:\Users\Valeriu\source\repos\TestApiBL\bin\Debug\netcoreapp3.0\TestApiBL.deps.json
-C:\Users\Valeriu\source\repos\TestApiBL\bin\Debug\netcoreapp3.0\TestApiBL.dll
-C:\Users\Valeriu\source\repos\TestApiBL\bin\Debug\netcoreapp3.0\TestApiBL.pdb
-C:\Users\Valeriu\source\repos\TestApiBL\obj\Debug\netcoreapp3.0\TestApiBL.csprojAssemblyReference.cache
-C:\Users\Valeriu\source\repos\TestApiBL\obj\Debug\netcoreapp3.0\TestApiBL.AssemblyInfoInputs.cache
-C:\Users\Valeriu\source\repos\TestApiBL\obj\Debug\netcoreapp3.0\TestApiBL.AssemblyInfo.cs
-C:\Users\Valeriu\source\repos\TestApiBL\obj\Debug\netcoreapp3.0\TestApiBL.dll
-C:\Users\Valeriu\source\repos\TestApiBL\obj\Debug\netcoreapp3.0\TestApiBL.pdb
