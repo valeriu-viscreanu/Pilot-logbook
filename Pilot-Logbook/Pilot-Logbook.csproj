@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\InMemoryUserRepository.cs" />
+    <Compile Remove="Repository\IUserRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Repository\InMemoryUserRepository.cs" />
+    <Compile Include="Repository\IUserRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
