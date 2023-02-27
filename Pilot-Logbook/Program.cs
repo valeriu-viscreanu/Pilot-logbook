@@ -1,3 +1,5 @@
+using FlightLog;
+using FlightLog.Models;
 using FlightLog.Repoitory;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserRepository, InMemoryUserRepository>();
-
+builder.Services.AddSingleton<IFlightRepository, FlightRepository>();
+builder.Services.Configure<FlightsDatabaseSettings>(
+    builder.Configuration.GetSection("FlightsDatabase"));
 
 var app = builder.Build();
 
