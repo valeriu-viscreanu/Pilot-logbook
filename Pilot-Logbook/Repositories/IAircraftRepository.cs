@@ -3,7 +3,7 @@
 public interface IAircraftRepository
 {
     IEnumerable<Aircraft> GetAll();
-    Aircraft GetById(int id);
+    Aircraft GetByRegistration(string registration);
     void Add(Aircraft aircraft);
     void Update(Aircraft aircraft);
     void Delete(int id);

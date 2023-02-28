@@ -6,5 +6,5 @@ public class FlightsDatabaseSettings
 
     public string DatabaseName { get; set; } = null!;
 
-    public string BooksCollectionName { get; set; } = null!;
+    public string FlightsCollectionName { get; set; } = null!;
 }

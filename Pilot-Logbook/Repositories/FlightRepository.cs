@@ -20,7 +20,7 @@ namespace FlightLog
                 flightsDatabaseSettings.Value.DatabaseName);
 
             _flights = mongoDatabase.GetCollection<Flight>(
-                flightsDatabaseSettings.Value.BooksCollectionName);
+                flightsDatabaseSettings.Value.FlightsCollectionName);
         }
 
         public Flight GetById(int id) =>  _flights.Find(x => x.Id == id).FirstOrDefaultAsync().Result;
