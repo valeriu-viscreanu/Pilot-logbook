@@ -1,6 +1,6 @@
 namespace FlightLog.Models;
 
-public class FlightsDatabaseSettings
+public class FlightLogDatabase
 {
     public string ConnectionString { get; set; } = null!;
 

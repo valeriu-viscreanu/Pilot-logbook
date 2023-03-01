@@ -11,7 +11,7 @@ namespace FlightLog
     {
         private readonly IMongoCollection<Flight> _flights;
 
-        public FlightRepository(IOptions<FlightsDatabaseSettings> flightsDatabaseSettings)
+        public FlightRepository(IOptions<FlightLogDatabase> flightsDatabaseSettings)
         {
             var mongoClient = new MongoClient(
             flightsDatabaseSettings.Value.ConnectionString);

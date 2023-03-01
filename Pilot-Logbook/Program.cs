@@ -12,8 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserRepository, InMemoryUserRepository>();
 builder.Services.AddSingleton<IFlightRepository, FlightRepository>();
-builder.Services.Configure<FlightsDatabaseSettings>(
-    builder.Configuration.GetSection("FlightsDatabase"));
+builder.Services.AddSingleton<IAircraftRepository, AircraftRepository>();
+builder.Services.Configure<FlightLogDatabase>(
+    builder.Configuration.GetSection("FlightLogDatabase"));
 
 var app = builder.Build();
 
