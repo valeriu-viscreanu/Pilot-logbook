@@ -15,7 +15,7 @@ namespace FlightLog.Models
                 flightsDatabaseSettings.Value.DatabaseName);
 
             _aircrafts = mongoDatabase.GetCollection<Aircraft>(
-                flightsDatabaseSettings.Value.FlightsCollectionName);
+                flightsDatabaseSettings.Value.AircraftCollectionName);
         }
 
 
