@@ -14,7 +14,7 @@ namespace FlightLog
             _flights = new List<Flight>();
         }
 
-        public Flight GetById(int id)
+        public Flight GetById(string id)
         {
             return _flights.FirstOrDefault(f => f.Id == id);
         }
@@ -26,7 +26,6 @@ namespace FlightLog
 
         public void Add(Flight flight)
         {
-            flight.Id = _flights.Any() ? _flights.Max(f => f.Id) + 1 : 1;
             _flights.Add(flight);
         }
 
@@ -40,7 +39,7 @@ namespace FlightLog
             }
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
             var existingFlight = _flights.FirstOrDefault(f => f.Id == id);
             if (existingFlight != null)

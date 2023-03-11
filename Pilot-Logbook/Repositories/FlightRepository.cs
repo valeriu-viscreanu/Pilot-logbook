@@ -7,30 +7,20 @@ using System.Linq;
 
 namespace FlightLog
 {
-    public class FlightRepository : IFlightRepository
+    public class FlightRepository : BaseRepository<Flight>, IFlightRepository
     {
-        private readonly IMongoCollection<Flight> _flights;
-
-        public FlightRepository(IOptions<FlightLogDatabase> flightsDatabaseSettings)
+        public FlightRepository(IOptions<FlightLogDatabase> databaseSettings) : base(databaseSettings)
         {
-            var mongoClient = new MongoClient(
-            flightsDatabaseSettings.Value.ConnectionString);
-
-            var mongoDatabase = mongoClient.GetDatabase(
-                flightsDatabaseSettings.Value.DatabaseName);
-
-            _flights = mongoDatabase.GetCollection<Flight>(
-                flightsDatabaseSettings.Value.FlightsCollectionName);
         }
 
-        public Flight GetById(int id) =>  _flights.Find(x => x.Id == id).FirstOrDefaultAsync().Result;
+        public void Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
 
-        public IEnumerable<Flight> GetAll() => _flights.Find(_ => true).ToListAsync().Result;        
-
-        public void Add(Flight flight) => _flights.InsertOneAsync(flight);
-        
-        public void Update(Flight flight) => throw new NotImplementedException();
-
-        public void Delete(int id) => throw new NotImplementedException();
+        public Flight GetById(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

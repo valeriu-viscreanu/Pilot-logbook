@@ -16,17 +16,16 @@ namespace FlightLog.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Signup([FromBody] SignupModel model)
+        public async Task<IActionResult> Signup([FromBody] User model)
         {
             if (ModelState.IsValid)
             {
-                if (await _userRepository.GetByUsernameAsync(model.Username) == null)
+                if (await _userRepository.GetByUsernameAsync(model.Email) == null)
                 {
                     var user = new User
                     {
                         Email = model.Email,
-                        Password = model.Password,
-                        Name = model.Username
+                        Password = model.Password
                     };
                     await _userRepository.AddUserAsync(user);
                     return Ok();

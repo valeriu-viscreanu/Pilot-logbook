@@ -4,7 +4,7 @@ namespace FlightLog
 {
     public interface IFlightRepository
     {
-        Flight GetById(int id);
+        Flight GetById(string id);
 
         IEnumerable<Flight> GetAll();
 
@@ -12,7 +12,7 @@ namespace FlightLog
 
         void Update(Flight flight);
         
-        void Delete(int id);
+        void Delete(string id);
 
     }
 }

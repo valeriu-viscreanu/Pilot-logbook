@@ -1,8 +1,8 @@
 namespace FlightLog.Models
 {
-    public class Flight
+    public class Flight: IEntity
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public Aircraft Aircraft { get; set; }
         public DateTime TakeoffTime { get; set; }
         public DateTime LandingTime { get; set; }
