@@ -1,4 +1,5 @@
-using FlightLog.Models;
+
+using FlightLog.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FlightLog.Controllers
@@ -15,9 +16,16 @@ namespace FlightLog.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Aircraft> Get()
+        public IEnumerable<ViewModel.Aircraft> Get()
         {
-            return this.aircraftRepository.GetAll();
+            var aircrafts = aircraftRepository.GetAll();
+            var r = new List<ViewModel.Aircraft>();
+            return  aircrafts.Select(ac => new ViewModel.Aircraft
+            {
+                Name = ac.Name,
+                Registration = ac.Registration,
+                Type = ac.Type
+            }).ToList();
         }
 
         [HttpGet("{registration}")]
@@ -28,47 +36,57 @@ namespace FlightLog.Controllers
             {
                 return NotFound();
             }
-            return Ok(aircraft);
+            return Ok(new ViewModel.Aircraft
+            {
+                Name = aircraft.Name,
+                Registration = aircraft.Registration,
+                Type = aircraft.Type
+            });
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Aircraft aircraft)
+        public IActionResult Post([FromBody] ViewModel.Aircraft aircraftVM)
         {
-            if (aircraft == null)
+            if (aircraftVM == null)
             {
                 return BadRequest();
             }
-            aircraftRepository.Add(aircraft);
-            return CreatedAtAction(nameof(Get), new { registration = aircraft.Registration }, aircraft);
+            aircraftRepository.Add(new Models.Aircraft
+            {
+                Name = aircraftVM.Name,
+                Registration = aircraftVM.Registration,
+                Type = aircraftVM.Type
+            });
+            return CreatedAtAction(nameof(Get), new { registration = aircraftVM.Registration }, aircraftVM);
         }
 
-        // [HttpPut("{registration}")]
-        // public IActionResult Put(string registration, [FromBody] Aircraft aircraft)
-        // {
-        //     if (aircraft == null || aircraft.Registration != registration)
-        //     {
-        //         return BadRequest();
-        //     }
-        //     var existingAircraft = _aircrafts.Find(a => a.Registration == registration);
-        //     if (existingAircraft == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     existingAircraft.Name = aircraft.Name;
-        //     existingAircraft.Type = aircraft.Type;
-        //     return NoContent();
-        // }
+        //[HttpPut("{registration}")]
+        //public IActionResult Put(string registration, [FromBody] Aircraft aircraft)
+        //{
+        //    if (aircraft == null || aircraft.Registration != registration)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    var existingAircraft = _aircrafts.Find(a => a.Registration == registration);
+        //    if (existingAircraft == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    existingAircraft.Name = aircraft.Name;
+        //    existingAircraft.Type = aircraft.Type;
+        //    return NoContent();
+        //}
 
-        // [HttpDelete("{registration}")]
-        // public IActionResult Delete(string registration)
-        // {
-        //     var aircraft = _aircrafts.Find(a => a.Registration == registration);
-        //     if (aircraft == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     _aircrafts.Remove(aircraft);
-        //     return NoContent();
-        // }
+        //[HttpDelete("{registration}")]
+        //public IActionResult Delete(string registration)
+        //{
+        //    var aircraft = _aircrafts.Find(a => a.Registration == registration);
+        //    if (aircraft == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    _aircrafts.Remove(aircraft);
+        //    return NoContent();
+        //}
     }
 }

@@ -1,5 +1,6 @@
-using FlightLog.Models;
+using FlightLog.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
 
 namespace FlightLog.Controllers
 {
@@ -7,7 +8,6 @@ namespace FlightLog.Controllers
     [Route("api/[controller]")]
     public class FlightsController : ControllerBase
     {
-        private readonly List<Flight> _flights;
         private readonly IFlightRepository flightRepository;
 
         public FlightsController(IFlightRepository flightRepository)
@@ -18,7 +18,18 @@ namespace FlightLog.Controllers
         [HttpGet]
         public IEnumerable<Flight> Get()
         {
-            return flightRepository.GetAll();
+            return flightRepository.GetAll().Select(f => new Flight
+            {
+                Aircraft = new Aircraft
+                {
+                    Name = f.Aircraft.Name,
+                    Type = f.Aircraft.Type,
+                    Registration = f.Aircraft.Registration
+                },
+                LandingTime = f.LandingTime,
+                Pilots = f.Pilots,
+                TakeoffTime = f.TakeoffTime
+            });
         }
     }
 }
