@@ -1,6 +1,5 @@
-using FlightLog.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using System.Xml.Linq;
+using Flight = FlightLog.ViewModel.Flight;
 
 namespace FlightLog.Controllers
 {
@@ -20,16 +19,30 @@ namespace FlightLog.Controllers
         {
             return flightRepository.GetAll().Select(f => new Flight
             {
-                Aircraft = new Aircraft
-                {
-                    Name = f.Aircraft.Name,
-                    Type = f.Aircraft.Type,
-                    Registration = f.Aircraft.Registration
-                },
+                AircraftRegistration = f.AircraftRegistration,
                 LandingTime = f.LandingTime,
                 Pilots = f.Pilots,
                 TakeoffTime = f.TakeoffTime
             });
+        }
+
+        [HttpPost]
+        public ActionResult Post([FromBody] Flight flightVM)
+        {
+            if (flightVM == null)
+            {
+                return BadRequest();
+            }
+            flightRepository.Add(new Models.Flight
+            {
+                LandingTime = flightVM.LandingTime,
+                TakeoffTime = flightVM.TakeoffTime,
+                AircraftRegistration = flightVM.AircraftRegistration,
+                Pilots = flightVM.Pilots
+            });
+
+            return Ok();
+
         }
     }
 }
