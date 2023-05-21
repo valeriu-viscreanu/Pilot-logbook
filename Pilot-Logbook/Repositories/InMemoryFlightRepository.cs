@@ -31,10 +31,10 @@ namespace FlightLog
 
         public void Update(Flight flight)
         {
-            var existingFlight = _flights.FirstOrDefault(f => f.Id == flight.Id);
-            if (existingFlight != null)
+            var existingFlight = _flights.Any(f => f.Id == flight.Id);
+            if (existingFlight)
             {
-                _flights.Remove(existingFlight);
+                _flights.RemoveAll(f => f.Id == flight.Id);
                 _flights.Add(flight);
             }
         }

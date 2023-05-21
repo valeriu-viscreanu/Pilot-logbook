@@ -1,5 +1,5 @@
 using FlightLog.Models;
-namespace FlightLog.Repoitory
+namespace FlightLog.Repository
 {
     public class InMemoryUserRepository : IUserRepository
     {

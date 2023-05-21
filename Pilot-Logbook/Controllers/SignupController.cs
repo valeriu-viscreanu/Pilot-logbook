@@ -1,5 +1,5 @@
 using FlightLog.Models;
-using FlightLog.Repoitory;
+using FlightLog.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FlightLog.Controllers

@@ -1,7 +1,7 @@
 using FlightLog.Models;
 using Microsoft.Extensions.Options;
 
-namespace FlightLog.Repoitory
+namespace FlightLog.Repository
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {

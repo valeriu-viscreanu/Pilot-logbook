@@ -1,4 +1,4 @@
-namespace FlightLog.Repoitory
+namespace FlightLog.Repository
 {
     using FlightLog.Models;
     public interface IUserRepository

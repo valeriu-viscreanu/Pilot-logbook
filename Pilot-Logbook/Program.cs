@@ -1,6 +1,6 @@
 using FlightLog;
 using FlightLog.Models;
-using FlightLog.Repoitory;
+using FlightLog.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
